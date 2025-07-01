@@ -1,0 +1,3 @@
+[submodule "feature_extraction/video_features"]
+	path = feature_extraction/video_features
+	url = git@github.com:rmuraix/video_features.git
