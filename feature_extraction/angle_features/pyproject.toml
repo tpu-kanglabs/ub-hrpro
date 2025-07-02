@@ -1,0 +1,16 @@
+[project]
+name = "ub-hrpro-angle-features"
+version = "0.1.0"
+description = "Official implementation of Point-Supervised Japanese Fingerspelling Localization via HR-Pro and Contrastive Learning."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mediapipe==0.10.21",
+    "opencv-python==4.11.0.86",
+    "tqdm==4.67.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.1",
+]
