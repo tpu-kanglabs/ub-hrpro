@@ -1,0 +1,45 @@
+# dataset info
+backbone: 'videoMAE'
+dataset: "fingerspeling"
+data_path: "./dataset/fingerspeling" 
+frames_per_sec: 60 
+segment_frames_num: 16 
+feature_dim: 768 # I3D(RGB+Flow): 2048, VideoMAE(RGB): 768, Angle: 20
+tIoU_thresh: "np.linspace(0.1, 0.7, 7)" 
+blocked_videos: []
+
+# training params
+num_segments: -1
+num_workers: 4
+num_iters: 5000
+test_iter: 50
+batch_size: 8  
+lr: 0.0001
+weight_decay: 0.0005
+dropout: 0.7
+r_act: 8
+lambdas: "[0, 0.5, 1, 1]"
+RAB_args: {'layer_num': 2, 'drop_out': 0.3, 'num_heads': 8, 'dim_feedforward': 128}
+
+# stage2 params
+max_epochs: 20 
+test_epoch: 1
+batch_size2: 10
+lr2: 0.00005 
+weight_loss_score: 1
+weight_loss_reg: 1
+max_proposal: 1000
+
+
+# post processing params  
+scale: 2  
+class_thresh: 0.5 
+act_thresh_cas: "np.arange(0.0, 0.25, 0.025)"
+act_thresh_agnostic: "np.arange(0.5, 0.725, 0.025)"    
+_lambda: 0.25 
+gamma: 0  
+
+
+# task control
+task_info: 'HR-Pro'
+gpu: '0'
