@@ -1,0 +1,7 @@
+work_dir/
+data/
+
+*.pth
+*.npy
+logs*/
+wandb/
