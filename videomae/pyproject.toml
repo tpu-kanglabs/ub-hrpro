@@ -1,0 +1,40 @@
+[project]
+name = "ub-hrpro-videoMAE"
+version = "0.1.0"
+description = "Official implementation of Point-Supervised Japanese Fingerspelling Localization via HR-Pro and Contrastive Learning."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "decord==0.6.0",
+    "deepspeed==0.17.1",
+    "einops==0.8.1",
+    "numpy==2.3.0",
+    "opencv-python==4.11.0.86",
+    "packaging==25.0",
+    "pandas==2.3.0",
+    "schedulefree==1.4.1",
+    "scipy==1.15.3",
+    "timm==0.4.12",
+    "torch==2.6.0",
+    "torchvision==0.21.0",
+    "tqdm==4.67.1",
+    "wandb==0.20.1",
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cuda", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cuda", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cuda"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.1",
+]
