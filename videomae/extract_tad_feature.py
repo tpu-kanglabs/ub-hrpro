@@ -52,8 +52,8 @@ def get_args():
 
     parser.add_argument(
         "--data_set",
-        default="ubmoji",
-        choices=["THUMOS14", "FINEACTION", "ubmoji"],
+        default="fingerspelling",
+        choices=["THUMOS14", "FINEACTION", "fingerspelling"],
         type=str,
         help="dataset",
     )
@@ -84,15 +84,12 @@ def get_start_idx_range(data_set):
     def fineaction_range(num_frames):
         return range(0, num_frames - 15, 16)
 
-    def ubmoji_range(num_frames):
-        return range(0, num_frames - 15, 16)
-
     if data_set == "THUMOS14":
         return thumos14_range
     elif data_set == "FINEACTION":
         return fineaction_range
-    elif data_set == "ubmoji":
-        return ubmoji_range
+    elif data_set == "fingerspelling":
+        return fineaction_range
     else:
         raise NotImplementedError()
 
