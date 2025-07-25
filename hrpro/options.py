@@ -4,7 +4,7 @@ import os
 import yaml
 
 _CLASS_NAME = {
-    "fingerspeling": [
+    "ub-moji": [
         "a",
         "i",
         "u",
