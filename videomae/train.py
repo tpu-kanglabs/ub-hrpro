@@ -16,9 +16,9 @@ from tqdm import tqdm
 
 
 def build_loader(
-    snippets, ann_path, data_path, clip_len, aug1, aug2, batch_size, sampler
+    snippets, annotations, data_path, clip_len, aug1, aug2, batch_size, sampler
 ):
-    dataset = SnippetDataset(snippets, data_path, ann_path, clip_len, aug1, aug2)
+    dataset = SnippetDataset(snippets, data_path, annotations, clip_len, aug1, aug2)
     return DataLoader(
         dataset,
         batch_size=batch_size,
@@ -115,7 +115,7 @@ class SimCLRTrainer:
         aug1, aug2 = get_augmentations((224, 224))
         self.loader = build_loader(
             snippets,
-            args.ann_path,
+            annotations,
             args.data_path,
             args.clip_len,
             aug1,
