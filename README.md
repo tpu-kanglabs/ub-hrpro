@@ -66,10 +66,12 @@ Please refer to the dataset repository for dataset-specific licensing terms.
 ## Citation
 
 ```bibtex
-@inproceedings{Murai2025_ICCVW,
-  title     = {Point-Supervised Japanese Fingerspelling Localization via HR-Pro and Contrastive Learning},
-  author    = {Murai, Ryota and Tsuta, Naoto and Shin, Duk and Kang, Yousun},
-  booktitle = {2025 IEEE/CVF International Conference on Computer Vision Workshops (ICCVW)},
-  year      = {2025},
+@InProceedings{Murai_2025_ICCV,
+    author    = {Murai, Ryota and Tsuta, Naoto and Shin, Duk and Kang, Yousun},
+    title     = {Point-Supervised Japanese Fingerspelling Localization via HR-Pro and Contrastive Learning},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+    month     = {October},
+    year      = {2025},
+    pages     = {4916-4923}
 }
 ```
