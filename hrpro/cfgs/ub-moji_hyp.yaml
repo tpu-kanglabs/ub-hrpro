@@ -1,7 +1,7 @@
 # dataset info
 backbone: 'videoMAE'
-dataset: "fingerspeling"
-data_path: "./dataset/fingerspeling" 
+dataset: "ub-moji"
+data_path: "./dataset/ub-moji" 
 frames_per_sec: 60 
 segment_frames_num: 16 
 feature_dim: 768 # I3D(RGB+Flow): 2048, VideoMAE(RGB): 768, Angle: 20

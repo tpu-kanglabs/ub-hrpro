@@ -2,9 +2,8 @@ import json
 import os
 
 import numpy as np
-from termcolor import colored
-
 from eval.eval_detection import ANETdetection
+from termcolor import colored
 
 
 def color(text, txt_color="green", attrs=["bold"]):
@@ -89,10 +88,14 @@ def log_evaluate(args, step, test_acc, logger, json_path, test_info, subset="tes
     # >> evaluate mAP
     mapping_subset = {
         "THUMOS14": {"train": "Validation", "test": "Test"},
-        "hand-sign": {"train": "Validation", "test": "Test"},
-        "hand-sign-angle": {"train": "Validation", "test": "Test"},
-        "hand-sign-ssl": {"train": "Validation", "test": "Test"},
+        "ub-moji": {"train": "Validation", "test": "Test"},
     }
+    if args.dataset not in mapping_subset:
+        raise KeyError(
+            "Unsupported dataset '{}' in log_evaluate mapping_subset.".format(
+                args.dataset
+            )
+        )
     subset_name = mapping_subset[args.dataset][subset]
     gt_path = os.path.join(args.data_path, "gt_full.json")
     anet_detection = ANETdetection(
