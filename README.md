@@ -72,6 +72,7 @@ Please refer to the dataset repository for dataset-specific licensing terms.
     booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
     month     = {October},
     year      = {2025},
-    pages     = {4916-4923}
+    pages     = {4975-4982}
+    doi       = {10.1109/ICCVW69036.2025.00516},
 }
 ```
